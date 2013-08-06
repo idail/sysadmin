@@ -33,10 +33,25 @@
 			<li class="submenu">
 				<a href="#"><i class="icon icon-file"></i> <span>Paginas Simples</span> <span class="label">4</span></a>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Contato</a></li>
-					<li><a href="#">A Empresa</a></li>
-					<li><a href="#">Quem somos</a></li>
+					<?php 
+include ('bd/conexao.php');
+mysql_select_db("sysadmin");
+$result = mysql_query("SELECT * FROM paginas");
+
+while ($row = mysql_fetch_array($result)) {
+
+//echo "<pre>";
+//print_r($row);
+  //echo "</pre>";
+
+  $contador = $row[1];
+
+					?>
+
+
+
+					<li><a href="#"><?php echo $contador; ?></a></li><?php } ?>
+					
 				</ul>
 			</li>
 			<!-- <li>
